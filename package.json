@@ -1,0 +1,39 @@
+{
+  "name": "dshx-remote",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Remote-control DeepSeek Harness from a phone: a paired mobile web app (PWA) over LAN or Tailscale to watch sessions, send prompts, stop turns, and answer approval requests.",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis"
+  ],
+  "author": "callaumyan-design",
+  "license": "MIT",
+  "homepage": "https://github.com/callaumyan-design/dshx-remote#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/callaumyan-design/dshx-remote.git"
+  },
+  "bugs": {
+    "url": "https://github.com/callaumyan-design/dshx-remote/issues"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  }
+}
